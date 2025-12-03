@@ -14,6 +14,7 @@ An ActiveRecord-like ORM for Google Spreadsheets in Google Apps Script. This lib
 - **Easy Querying**: Find, filter, and manipulate data with simple method calls
 - **CRUD Operations**: Create, read, update, and delete rows easily
 - **Date Handling**: Automatic handling of Date objects in comparisons
+- **Unicode Column Names**: Support for any Unicode string as column names (Japanese, Chinese, emojis, etc.)
 - **Google Apps Script Ready**: Designed specifically for use with @google/clasp
 
 ### Installation
@@ -222,6 +223,7 @@ Google Apps ScriptでGoogleスプレッドシートをActiveRecord風に扱う�
 - **簡単なクエリ**: シンプルなメソッド呼び出しでデータの検索、フィルタリング、操作が可能
 - **CRUD操作**: 行の作成、読み取り、更新、削除を簡単に実行
 - **日付処理**: Date型オブジェクトの比較を自動処理
+- **Unicodeカラム名対応**: 任意のUnicode文字列をカラム名として使用可能（日本語、中国語、絵文字など）
 - **Google Apps Script対応**: @google/claspでの使用を想定して設計
 
 ### インストール
