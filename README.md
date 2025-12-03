@@ -1,5 +1,9 @@
 # gas-spreadsheet-softer-activerecord
 
+> **⚠️ Under Development / 検証中です!**
+> This library is currently under development and testing. APIs may change without notice.
+> このライブラリは現在開発・検証中です。APIは予告なく変更される可能性があります。
+
 [English](#english) | [日本語](#japanese)
 
 <a name="english"></a>
@@ -39,10 +43,12 @@ const Logs = ActiveTable.bySheetName('Logs', false);
 
 Your spreadsheet should have headers in the first row:
 
-| id | name | status | created_at |
-|----|------|--------|------------|
-| user1 | Alice | active | 2023-01-01 |
-| user2 | Bob | inactive | 2023-01-02 |
+| id | name | status | created_at | メモ |
+|----|------|--------|------------|------|
+| user1 | Alice | active | 2023-01-01 | テストユーザー1 |
+| user2 | Bob | inactive | 2023-01-02 | テストユーザー2 |
+
+> **Note**: Japanese column names (like "メモ") are fully supported!
 
 **Note**: By default, the first column is treated as a unique ID. If duplicate values exist in the first column, an error will be thrown unless you set `checkUnique` to `false`.
 
@@ -194,6 +200,14 @@ import { ActiveTable } from 'gas-spreadsheet-softer-activerecord';
 clasp push
 ```
 
+### Example Project
+
+See the [test-client example](examples/test-client/) for a complete working example that demonstrates:
+- Basic CRUD operations
+- Batch operations (updateAll, deleteAll)
+- Date filtering (after, before)
+- Using the checkUnique parameter
+
 ### License
 
 MIT
@@ -237,10 +251,12 @@ const Logs = ActiveTable.bySheetName('Logs', false);
 
 スプレッドシートの1行目にヘッダーが必要です:
 
-| id | name | status | created_at |
-|----|------|--------|------------|
-| user1 | Alice | active | 2023-01-01 |
-| user2 | Bob | inactive | 2023-01-02 |
+| id | name | status | created_at | メモ |
+|----|------|--------|------------|------|
+| user1 | Alice | active | 2023-01-01 | テストユーザー1 |
+| user2 | Bob | inactive | 2023-01-02 | テストユーザー2 |
+
+> **注意**: 日本語のカラム名（「メモ」など）も完全にサポートされています!
 
 **注意**: デフォルトでは、1列目がユニークIDとして扱われます。1列目に重複する値がある場合、`checkUnique`を`false`に設定しない限りエラーがスローされます。
 
@@ -391,6 +407,14 @@ import { ActiveTable } from 'gas-spreadsheet-softer-activerecord';
 ```bash
 clasp push
 ```
+
+### サンプルプロジェクト
+
+完全な動作例は[test-clientサンプル](examples/test-client/)を参照してください。以下の機能を実演しています:
+- 基本的なCRUD操作
+- バッチ操作 (updateAll, deleteAll)
+- 日付フィルタリング (after, before)
+- checkUniqueパラメータの使用
 
 ### ライセンス
 

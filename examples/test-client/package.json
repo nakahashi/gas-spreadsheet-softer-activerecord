@@ -1,0 +1,33 @@
+{
+  "name": "gas-spreadsheet-softer-activerecord-test-client",
+  "version": "0.1.0",
+  "description": "Test client for gas-spreadsheet-softer-activerecord",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint --fix --no-error-on-unmatched-pattern src/",
+    "bundle": "rollup --no-treeshake -c rollup.config.mjs",
+    "build": "npm run clean && npm run bundle && ncp appsscript.json dist/appsscript.json",
+    "deploy": "npm run build && clasp push"
+  },
+  "dependencies": {
+    "gas-spreadsheet-softer-activerecord": "file:../.."
+  },
+  "devDependencies": {
+    "@google/clasp": "^3.0.4-alpha",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@types/google-apps-script": "^1.0.97",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "ncp": "^2.0.0",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.41.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-prettier": "^4.1.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.8.3"
+  }
+}

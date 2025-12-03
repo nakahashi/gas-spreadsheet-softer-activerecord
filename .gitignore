@@ -1,5 +1,10 @@
 temp
 
+# Test client specific
+examples/test-client/node_modules/
+examples/test-client/dist/
+examples/test-client/.clasp.json
+
 # Logs
 logs
 *.log
