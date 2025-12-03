@@ -1,9 +1,5 @@
 # gas-spreadsheet-softer-activerecord
 
-> **⚠️ Under Development / 検証中です!**
-> This library is currently under development and testing. APIs may change without notice.
-> このライブラリは現在開発・検証中です。APIは予告なく変更される可能性があります。
-
 [English](#english) | [日本語](#japanese)
 
 <a name="english"></a>
