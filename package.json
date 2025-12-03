@@ -1,0 +1,59 @@
+{
+  "name": "gas-spreadsheet-softer-activerecord",
+  "version": "0.1.0",
+  "description": "An ActiveRecord-like ORM for Google Spreadsheets in Google Apps Script",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "google-apps-script",
+    "gas",
+    "spreadsheet",
+    "activerecord",
+    "orm",
+    "clasp"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint --fix --no-error-on-unmatched-pattern src/ test/",
+    "bundle": "rollup --no-treeshake -c rollup.config.mjs",
+    "build": "npm run clean && npm run bundle",
+    "test": "jest test/ --passWithNoTests --detectOpenHandles",
+    "prepublishOnly": "npm run lint && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nakahashi/gas-spreadsheet-softer-activerecord.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nakahashi/gas-spreadsheet-softer-activerecord/issues"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.97",
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.41.0",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-prettier": "^4.1.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "ts-jest": "^29.3.4",
+    "typescript": "^5.8.3"
+  },
+  "peerDependencies": {
+    "@types/google-apps-script": "^1.0.0"
+  }
+}
