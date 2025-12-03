@@ -22,6 +22,8 @@ function testCrudOperations() {
   try {
     const user = Users.find('user1');
     Logger.log(`Found user: ${user.name}, status: ${user.status}`);
+    Logger.log(`  メモ: ${user.メモ}`);
+    Logger.log(`  📝: ${user['📝']}`);
   } catch (error) {
     Logger.log(`Error: ${error}`);
   }
@@ -34,7 +36,7 @@ function testCrudOperations() {
     Logger.log(`  - ${user.id}: ${user.name}`);
   });
 
-  // Test 4: Create a new user (with Japanese column name)
+  // Test 4: Create a new user (with Unicode column names)
   Logger.log('\n--- Test 4: Create new user ---');
   const newUserId = `user_test_${Date.now()}`;
   Users.create({
@@ -43,10 +45,11 @@ function testCrudOperations() {
     status: 'active',
     created_at: new Date(),
     メモ: 'テストで作成されたユーザー',
+    '📝': '絵文字テスト 🎉',
   });
   Logger.log(`Created new user: ${newUserId}`);
 
-  // Test 5: Update a user (including Japanese column)
+  // Test 5: Update a user (including Unicode columns)
   Logger.log('\n--- Test 5: Update user ---');
   try {
     const userToUpdate = Users.find(newUserId);
@@ -54,9 +57,11 @@ function testCrudOperations() {
       status: 'inactive',
       name: 'Updated Test User',
       メモ: '更新されたテストユーザー',
+      '📝': '更新された絵文字 ✨',
     });
     Logger.log(`Updated user ${newUserId}: ${userToUpdate.name}, ${userToUpdate.status}`);
     Logger.log(`  メモ: ${userToUpdate.メモ}`);
+    Logger.log(`  📝: ${userToUpdate['📝']}`);
   } catch (error) {
     Logger.log(`Error: ${error}`);
   }
